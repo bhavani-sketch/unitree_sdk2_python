@@ -74,14 +74,14 @@ if __name__ == "__main__":
     if len(sys.argv)>1:
         ChannelFactoryInitialize(0, sys.argv[1])
     else:
-        ChannelFactoryInitialize(0)
+        ChannelFactoryInitialize(0, "en0")
 
     test_option = TestOption(name=None, id=None) 
     user_interface = UserInterface()
     user_interface.test_option_ = test_option
 
-    sport_client = SportClient()  
-    sport_client.SetTimeout(10.0)
+    sport_client = SportClient(True)  
+    # sport_client.SetTimeout(10.0)
     sport_client.Init()
     while True:
 

@@ -102,8 +102,6 @@ class SportClient(Client):
         p = {}
         parameter = json.dumps(p)
         code, data = self._Call(SPORT_API_ID_STANDUP, parameter)
-        print("standup code: ", code)
-        print("standup data :", data)
         return code
 
     # 1005
@@ -137,9 +135,7 @@ class SportClient(Client):
         p["y"] = vy
         p["z"] = vyaw
         parameter = json.dumps(p)
-        # code = self._CallNoReply(SPORT_API_ID_MOVE, parameter)
-        code, data = self._Call(SPORT_API_ID_EULER, parameter)
-        print("data from move: ", data)
+        code = self._CallNoReply(SPORT_API_ID_MOVE, parameter)
         return code
 
     # 1009
